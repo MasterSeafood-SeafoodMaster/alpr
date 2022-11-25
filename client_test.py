@@ -140,7 +140,7 @@ s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.connect((HOST, PORT))
 
 while True:
-    outdata = input('please input message: ')
+    #outdata = input('please input message: ')
     #print('send: ' + outdata)
     #s.send(outdata.encode())
     
@@ -160,6 +160,8 @@ while True:
 
     else:
         print('recv: ' + rs)
+        se = "nono"
+        s.send(se.encode())
 
     if len(indata) == 0:
         s.close()
