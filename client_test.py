@@ -161,7 +161,7 @@ while True:
         se = json.dumps(obj)
         print(number)
 
-        s.send(sock.sendall(bytes(se,encoding="utf-8")))
+        sock.sendall(bytes(se,encoding="utf-8"))
 
     else:
         print('recv: ' + rs)
