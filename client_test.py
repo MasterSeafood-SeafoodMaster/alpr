@@ -146,17 +146,18 @@ while True:
     
     indata = s.recv(1024)
     rs = indata.decode()
-
+    print("waiting")
     if rs == "start\n":
         
-        print("start start")
+        print("img received")
         today = time.strftime("%Y-%m-%d", time.localtime())
-        path = "/home/lpr/testdata/photo.jpg"
+        path = "/home/lpr/openalpr/testdata/photo.jpg"
         frame = cv2.imread(path)
         number = convert_LicenseToWords(frame)
 
         #obj = { "results": { "candidates": { "plate":str(number) } } }
-        print(number)
+        
+        #print(number)
 
     else:
         print('recv: ' + rs)
