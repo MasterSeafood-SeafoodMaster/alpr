@@ -151,8 +151,8 @@ while True:
     if rs == "start\n":
         print("img received")
         today = time.strftime("%Y-%m-%d", time.localtime())
-        path = "/home/lpr/openalpr/logs/"+str(today)+"/1.jpg"
-        #path = "/home/lpr/openalpr/testdata/photo.jpg"
+        #path = "/home/lpr/openalpr/logs/"+str(today)+"/1.jpg"
+        path = "/home/lpr/openalpr/testdata/photo.jpg"
         frame = cv2.imread(path)
         number = convert_LicenseToWords(frame)
         print("imgPath:", path)
