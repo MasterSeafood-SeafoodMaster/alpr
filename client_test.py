@@ -156,8 +156,10 @@ while True:
         number = convert_LicenseToWords(frame)
         print("imgPath:", path)
         #obj = { "results": { "candidates": { "plate":str(number) } } }
-        
         #print(number)
+        
+        se = "0000-AA"
+        s.send(se.encode())
 
     else:
         print('recv: ' + rs)
