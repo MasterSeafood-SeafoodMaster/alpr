@@ -147,7 +147,7 @@ while True:
     indata = s.recv(1024)
     rs = indata.decode()
 
-    if rs == "start":
+    if rs == "start\n":
         
         print("start start")
         today = time.strftime("%Y-%m-%d", time.localtime())
@@ -155,7 +155,7 @@ while True:
         frame = cv2.imread(path)
         number = convert_LicenseToWords(frame)
 
-        obj = { "results": { "candidates": { "plate":str(number) } } }
+        #obj = { "results": { "candidates": { "plate":str(number) } } }
         print(number)
 
     else:
