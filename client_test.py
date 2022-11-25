@@ -143,18 +143,18 @@ while True:
     #outdata = input('please input message: ')
     #print('send: ' + outdata)
     #s.send(outdata.encode())
-    
+
+    print("waiting")
     indata = s.recv(1024)
     rs = indata.decode()
-    print("waiting")
+    
     if rs == "start\n":
-        
         print("img received")
         today = time.strftime("%Y-%m-%d", time.localtime())
         path = "/home/lpr/openalpr/testdata/photo.jpg"
         frame = cv2.imread(path)
         number = convert_LicenseToWords(frame)
-
+        print("imgPath:", path)
         #obj = { "results": { "candidates": { "plate":str(number) } } }
         
         #print(number)
