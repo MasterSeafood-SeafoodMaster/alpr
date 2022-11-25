@@ -2,6 +2,7 @@ import cv2
 import time
 import numpy as np
 import matplotlib.pyplot as plt
+import json
 
 import torch
 import torch.backends.cudnn as cudnn
@@ -156,11 +157,11 @@ while True:
         frame = cv2.imread(path)
         number = convert_LicenseToWords(frame)
         print("imgPath:", path)
-        #obj = { "results": { "candidates": { "plate":str(number) } } }
+        obj = { "results": { "candidates": { "plate":str(number) } } }
+        se = json.dumps(obj)
         print(number)
 
-        se = "0000-AA"
-        s.send(se.encode())
+        s.send(se)
 
     else:
         print('recv: ' + rs)
