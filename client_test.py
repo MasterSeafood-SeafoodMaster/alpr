@@ -159,7 +159,7 @@ while True:
         print("imgPath:", path)
         obj = { "results": { "candidates": { "plate":str(number) } } }
         se = json.dumps(obj)
-        print(se)
+        print("obj:", bytes(se))
         print(number)
 
         s.sendall(bytes(se,encoding="utf-8"))
