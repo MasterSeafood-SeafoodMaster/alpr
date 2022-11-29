@@ -157,7 +157,7 @@ while True:
         frame = cv2.imread(path)
         number = convert_LicenseToWords(frame)
         print("imgPath:", path)
-        obj = { "results": { "candidates": { "plate":str(number) } } }
+        obj = [{ "results": { "candidates": { "plate":str(number) } } }]
         se = json.dumps(obj)
         print("obj:", obj)
         print("se:", se)
