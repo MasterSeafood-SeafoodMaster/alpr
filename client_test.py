@@ -165,6 +165,8 @@ while True:
         print(number)
 
         s.sendall(bytes(se,encoding="utf-8"))
+        s.send("\n")
+        
 
     else:
         print('recv: ' + rs)
